@@ -1,16 +1,27 @@
 <script>
-import Header from './components/Header.vue';
+import Characters from "./components/Characters.vue";
 import "./assets/tailwind.css";
 
 export default {
   components: {
-    Header
-  }
-}
+    Characters,
+  },
+  data() {
+    return {
+      characters: [],
+    }
+  },
+  mounted() {
+    fetch('https://rickandmortyapi.com/api/character')
+    .then(res => res.json())
+    .then(res => this.characters = res.results)
+    .catch(err => console.log(err))
+  },
+};
 </script>
 
-  <template>
-    <div>
-      <Header title="Hello World!"/>
-    </div>
-  </template>
+<template>
+  <div class="h-screen flex">
+    <Characters :characters="characters" />
+  </div>
+</template>
