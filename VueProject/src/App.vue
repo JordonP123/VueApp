@@ -1,10 +1,16 @@
-<script setup>
+<script>
+import Header from './components/Header.vue';
+import "./assets/tailwind.css";
+
+export default {
+  components: {
+    Header
+  }
+}
 </script>
 
-<template>
-    <div class="wrapper">
-      <h1>hello!</h1>
+  <template>
+    <div>
+      <Header title="Hello World!"/>
     </div>
-
-  <RouterView />
-</template>
+  </template>
