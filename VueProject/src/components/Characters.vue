@@ -14,7 +14,9 @@ export default {
 </script>
 
 <template>
+  <div class="flex flex-wrap justify-evenly">
     <div v-for="character in characters">
     <Character :character="character"/>
     </div>
+  </div>
 </template>

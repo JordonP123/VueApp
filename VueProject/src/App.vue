@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-  <div class="h-screen flex">
+  <div class="h-screen w-screen">
     <Characters :characters="characters" />
   </div>
 </template>
